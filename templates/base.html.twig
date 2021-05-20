@@ -2,18 +2,41 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+        <title>{% block title %}MyMovieDB{% endblock %}</title>
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/app">Les Films
+                            </a>
+                        </li>
+                        {# <li class="nav-item">
+                            <a class="nav-link" href="/app/genre">Par Genre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/app/actor">Par Acteur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/app/studio">Par Studio</a>
+                        </li> #}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            {% block body %}{% endblock %}        
+        </div>
     </body>
 </html>
