@@ -4,7 +4,14 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="mt-4 mb-4">Film joué par {{actor}}</h1>
+	<div class="row">
+		<div class="col-10 text-center">
+			<h1 class="mt-4 mb-4">Film joué par {{actor}}</h1>
+		</div>
+		<div class="col-2">
+			<img src="/assets/img/{{actor.image}}" alt="{{actor}}" style="height:200px">		
+		</div>
+	</div>
 	<div class="row">
 		{% for movie in movies %}
         <div class="col-4">
@@ -40,6 +47,30 @@
                             <a href="/app/studio/{{studio.id}}" class="card-link">{{studio}}</a>
                         </li>                          
                     {% endfor %}
+				</ul>
+				<div class="card-footer text-muted">
+					Vu ?
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+                    {% if movie.seen %}
+						<p>Oui</p>
+					{% else %}
+						<p>Non</p>
+					{% endif %}
+					</li> 
+				</ul>
+				<div class="card-footer text-muted">
+					Dans ma Watch List ?
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+                    {% if movie.watchList %}
+						<p>Oui</p>
+					{% else %}
+						<p>Non</p>
+					{% endif %}
+					</li> 
 				</ul>
 			</div>
         </div>

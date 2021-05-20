@@ -41,6 +41,30 @@
                         </li>                          
                     {% endfor %}
 				</ul>
+				<div class="card-footer text-muted">
+					Vu ?
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+                    {% if movie.seen %}
+						<p>Oui</p>
+					{% else %}
+						<p>Non</p>
+					{% endif %}
+					</li> 
+				</ul>
+				<div class="card-footer text-muted">
+					Dans ma Watch List ?
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+                    {% if movie.watchList %}
+						<p>Oui</p>
+					{% else %}
+						<p>Non</p>
+					{% endif %}
+					</li> 
+				</ul>
 			</div>
         </div>
 		{% endfor %}
