@@ -10,26 +10,26 @@
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto">
+                        {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/app">Les Films
-                            </a>
+                            <a class="nav-link" href="/admin">Administration</a>
                         </li>
-                        {# <li class="nav-item">
-                            <a class="nav-link" href="/app/genre">Par Genre</a>
-                        </li>
+                        {% endif %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/app/actor">Par Acteur</a>
+                            <a class="nav-link" href="/app">Les Films</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/app/studio">Par Studio</a>
-                        </li> #}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">About</a>
+                            <a class="nav-link" href="/about">A propos</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
+                        {% if is_granted('ROLE_USER') %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout">Logout</a>
+                            <a class="nav-link" href="/logout">Déconnexion</a>
+                        {% else %}
+                            <a class="nav-link" href="/login">Connexion</a>
+                            <a class="nav-link" href="/register">Inscription</a>
+                        {% endif %}
                         </li>
                     </ul>
                 </div>
@@ -40,3 +40,9 @@
         </div>
     </body>
 </html>
+<style>
+img{
+    max-width: 100%;
+    object-fit: contain;
+}
+</style>

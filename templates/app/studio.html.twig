@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="mt-4 mb-4">Bienvenue sur MyMovieDB!</h1>
+	<h1 class="mt-4 mb-4">Films créés par le studio {{studio}}</h1>
 	<div class="row">
 		{% for movie in movies %}
         <div class="col-4">
@@ -13,7 +13,7 @@
 				<div class="card-body">
 					<h5 class="card-title">{{movie.originalName}}</h5>
 					<h6 class="card-subtitle text-muted">{{movie.releaseDate}}</h6>
-                    {% for genre in movie.genres %}
+					{% for genre in movie.genres %}
                         <a href="/app/genre/{{genre.id}}">{{genre}}</a>                        
                     {% endfor %}
 				</div>

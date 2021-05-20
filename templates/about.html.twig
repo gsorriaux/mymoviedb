@@ -1,5 +1,74 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-<h1>About</h1>
+<h1 class="mt-4 mb-4">A Propos</h1>
+<div class="row">
+    <div class="col">
+    <p>Application développé par <a href="https://www.linkedin.com/in/geoffrey-sorriaux/">Geoffrey Sorriaux</a> 👨‍💻</p>
+    <p>Vous trouverez ci-après les réferences nécessaires à la création de cette application web 👇</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Composant</th>
+                    <th scope="col">Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">Authentification</th>
+                    <td><a href="https://symfony.com/doc/current/security.html">Documentation Symfony</a></td>
+                </tr>
+                <tr>
+                    <td scope="row">Bootstrap</th>
+                    <td><a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">Documentation Bootsrap</a></td>
+                </tr>
+                <tr>
+                    <td scope="row">Mise en forme du site</th>
+                    <td><a href="https://bootswatch.com/flatly/">bootswatch.com</a></td>
+                </tr>
+                <tr>
+                    <td scope="row">Mise en place EasyAdmin</th>
+                    <td><a href="https://symfony.com/doc/current/bundles/EasyAdminBundle/dashboards.html">Documentation Symfony</a></td>
+                </tr>
+                <tr>
+                    <td scope="row">CRUD Controller EasyAdmin</th>
+                    <td><a href="https://symfony.com/doc/current/bundles/EasyAdminBundle/crud.html">Documentation Symfony</a></td>
+                </tr>
+                <tr>
+                    <td scope="row">Field EasyAdmin</th>
+                    <td><a href="https://symfony.com/doc/current/bundles/EasyAdminBundle/fields.html">Documentation Symfony</a></td>
+                </tr>
+                <tr>
+                    <td scope="row">Doctrine</th>
+                    <td><a href="https://symfony.com/doc/current/doctrine.html">Documentation Symfony</a></td>
+                </tr>
+                <tr>
+                    <td scope="row">Création formulaire</th>
+                    <td><a href="https://symfony.com/doc/current/forms.html">Documentation Symfony</a></td>
+                </tr>
+                <tr>
+                    <td scope="row">Controller du formulaire d'inscription</th>
+                    <td><a href="https://symfony.com/doc/4.0/doctrine/registration_form.html">Documentation Symfony</a></td>
+                </tr>
+                <tr>
+                    <td scope="row">Mise en forme formulaire d'inscription</th>
+                    <td><a href="https://symfony.com/doc/4.0/reference/forms/twig_reference.html">Documentation Symfony</a></td>
+                </tr>
+                <tr>
+                    <td scope="row">Données du site</th>
+                    <td><a href="https://www.themoviedb.org/">www.themoviedb.org</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div class="col">
+            <p>Merci à Sion pour ce super cours sur Symfony, à bientôt sur tes streams 😊</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

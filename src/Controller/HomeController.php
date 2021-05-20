@@ -9,28 +9,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\MovieRepository;
-use App\Repository\ActorRepository;
-use App\Repository\GenreRepository;
-use App\Repository\StudioRepository;
 
 class HomeController extends AbstractController
 {
     private $repoMovie;
-    // private $repoActor;
-    // private $repoGenre;
-    // private $repoStudio;
 
-    public function __construct(
-        MovieRepository $repoMovie
-        // ActorRepository $repoActor,
-        // GenreRepository $repoGenre,
-        // StudioRepository $repoStudio
-        )
+    public function __construct(MovieRepository $repoMovie)
     {
         $this->repoMovie = $repoMovie;
-        // $this->repoActor = $repoActor;
-        // $this->repoGenre = $repoGenre;
-        // $this->repoStudio = $repoStudio;
     }
 
     /**
@@ -58,7 +44,11 @@ class HomeController extends AbstractController
      */
     public function genre(Genre $genre): Response
     {
-        return $this->render('app/genre.html.twig');
+        $movies = $genre->getMovies();
+        return $this->render('app/genre.html.twig', [
+            'movies'    => $movies,
+            'genre'     => $genre
+        ]);
     }
      /**
      * @Route("/app/actor/{id}", name="actor")
@@ -76,7 +66,11 @@ class HomeController extends AbstractController
      */
     public function studio(Studio $studio): Response
     {
-        return $this->render('app/studio.html.twig');
+        $movies = $studio->getMovies();
+        return $this->render('app/studio.html.twig', [
+            'movies'    => $movies,
+            'studio'     => $studio
+        ]);
     }
      /**
      * @Route("/about", name="about")
